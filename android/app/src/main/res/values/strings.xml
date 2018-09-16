@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">[RadioWRXBetaTest1]</string>
+    <string name="title_activity_main">[RadioWRXBetaTest1]</string>
+    <string name="package_name">com.radiowrx.app</string>
+    <string name="fileprovider_authority">com.radiowrx.app.fileprovider</string>
+    <string name="custom_url_scheme">com.radiowrx.app</string>
+</resources>
