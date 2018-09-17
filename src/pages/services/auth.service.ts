@@ -8,7 +8,17 @@ export class AuthService {
 
   constructor(
     private firebaseService: FirebaseService
-  ){}
+  ){
+    firebase.auth().onAuthStateChanged((user) => {
+      if(user) {
+        //User is signed in.
+        console.log('User is signed in');
+      } else {
+        //No user signed in.
+        console.log('User is NOT signed in');
+      }
+    });
+  }
 
   doRegister(value){
    return new Promise<any>((resolve, reject) => {

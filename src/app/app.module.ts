@@ -7,7 +7,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+import { AboutPage } from '../pages/about/about';
+import { ContactPage } from '../pages/contact/contact';
+import { HomePage } from '../pages/home/home';
 import { MenuPage } from '../pages/menu/menu';
+import { TabsPage } from '../pages/tabs/tabs';
 import { DetailsPage } from '../pages/details/details';
 import { NewTaskModalPage } from '../pages/new-task-modal/new-task-modal';
 
@@ -20,6 +24,8 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environment/environment';
 
+import { ImagePicker } from '@ionic-native/image-picker';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -27,7 +33,11 @@ import { environment } from '../environment/environment';
     RegisterPage,
     MenuPage,
     NewTaskModalPage,
-    DetailsPage
+    DetailsPage,
+    TabsPage,
+    AboutPage,
+    ContactPage,
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -44,13 +54,18 @@ import { environment } from '../environment/environment';
     RegisterPage,
     MenuPage,
     NewTaskModalPage,
-    DetailsPage
+    DetailsPage,
+    TabsPage,
+    AboutPage,
+    ContactPage,
+    HomePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     FirebaseService,
     AuthService,
+    ImagePicker,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

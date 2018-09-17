@@ -3,6 +3,8 @@ import { ViewController, normalizeURL, ToastController, LoadingController } from
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FirebaseService } from '../services/firebase.service';
 
+import { ImagePicker } from '@ionic-native/image-picker';
+
 @Component({
   selector: 'page-new-task-modal',
   templateUrl: 'new-task-modal.html'
@@ -18,7 +20,8 @@ export class NewTaskModalPage {
     private toastCtrl: ToastController,
     private formBuilder: FormBuilder,
     private firebaseService: FirebaseService,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private imagePicker: ImagePicker
   ) {
     this.loading = this.loadingCtrl.create();
   }
@@ -54,7 +57,7 @@ export class NewTaskModalPage {
     )
   }
 
-  /*openImagePicker(){
+  openImagePicker(){
     this.imagePicker.hasReadPermission()
     .then((result) => {
       if(result == false){
@@ -94,5 +97,4 @@ export class NewTaskModalPage {
       toast.present();
       })
   }
-*/
 }

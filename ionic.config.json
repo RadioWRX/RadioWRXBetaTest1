@@ -1,7 +1,8 @@
 {
   "name": "RadioWRXBetaTest1",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "ionic-angular",
   "pro_id": "02128c63"
