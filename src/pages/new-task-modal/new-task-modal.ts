@@ -97,4 +97,8 @@ export class NewTaskModalPage {
       toast.present();
       })
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 13d875ff3c312c399867ed6d545a319d3e79af76
 }
