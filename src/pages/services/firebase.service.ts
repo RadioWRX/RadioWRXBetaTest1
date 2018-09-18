@@ -63,6 +63,55 @@ export class FirebaseService {
     })
   }
 
+  deleteMember(memberKey){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('band').doc(currentUser.uid).collection('members').doc(memberKey).delete()
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+  //Get Band Members
+  getMembers(){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.snapshotChangesSubscription = this.afs.collection('band').doc(currentUser.uid).collection('members').snapshotChanges()
+      .subscribe(snapshots => {
+        resolve(snapshots);
+      })
+    });
+  }
+
+  updateMember(memberKey, value){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('band').doc(currentUser.uid).collection('members').doc(memberKey).set(value)
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+  //Creat a band member
+  createMember(value){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('band').doc(currentUser.uid).collection('members').add({
+        title: value.title,
+        description: value.description,
+        image: value.image
+      })
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
   encodeImageUri(imageUri, callback) {
     var c = document.createElement('canvas');
     var ctx = c.getContext("2d");

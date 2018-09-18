@@ -4,7 +4,7 @@ import { NavController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 import { RegisterPage } from '../register/register';
-import { MenuPage } from '../menu/menu';
+import { TabsPage } from '../tabs/tabs';
 
 import { AuthService } from '../services/auth.service';
 
@@ -51,7 +51,7 @@ export class LoginPage {
   tryLogin(value){
     this.authService.doLogin(value)
     .then(res => {
-      this.navCtrl.push(MenuPage);
+      this.navCtrl.push(TabsPage);
     }, err => {
       this.errorMessage = err.message;
     })

@@ -1,15 +1,22 @@
 import { Component } from '@angular/core';
-import { ViewController, normalizeURL, ToastController, LoadingController } from 'ionic-angular';
+import { IonicPage, ViewController, normalizeURL, ToastController, LoadingController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FirebaseService } from '../services/firebase.service';
 
 import { ImagePicker } from '@ionic-native/image-picker';
+/**
+ * Generated class for the NewBandMemberModalPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
+@IonicPage()
 @Component({
-  selector: 'page-new-task-modal',
-  templateUrl: 'new-task-modal.html'
+  selector: 'page-new-band-member-modal',
+  templateUrl: 'new-band-member-modal.html',
 })
-export class NewTaskModalPage {
+export class NewBandMemberModalPage {
 
   validations_form: FormGroup;
   image: any;
@@ -23,7 +30,7 @@ export class NewTaskModalPage {
     private loadingCtrl: LoadingController,
     private imagePicker: ImagePicker
   ) {
-    this.loading = this.loadingCtrl.create();
+      this.loading = this.loadingCtrl.create();
   }
 
   ionViewWillLoad(){
@@ -48,7 +55,7 @@ export class NewTaskModalPage {
       description: value.description,
       image: this.image
     }
-    this.firebaseService.createTask(data)
+    this.firebaseService.createMember(data)
     .then(
       res => {
         this.resetFields();
@@ -97,4 +104,10 @@ export class NewTaskModalPage {
       toast.present();
       })
   }
+
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad NewBandMemberModalPage');
+  }
+
 }

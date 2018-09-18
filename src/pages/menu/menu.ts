@@ -5,6 +5,7 @@ import { FirebaseService } from '../services/firebase.service';
 import { NewTaskModalPage } from '../new-task-modal/new-task-modal';
 import { DetailsPage } from '../details/details';
 import { LoginPage } from '../login/login';
+import { CreateBandMemberPage } from '../create-band-member/create-band-member';
 
 
 @Component({
@@ -58,8 +59,12 @@ export class MenuPage {
   logout(){
     this.authService.doLogout()
     .then(res => {
-      this.navCtrl.push(LoginPage);
+      this.navCtrl.parent.parent.setRoot(LoginPage);
     })
+  }
+
+  goToCreateBandMember() {
+    this.navCtrl.push(CreateBandMemberPage);
   }
 
 }

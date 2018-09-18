@@ -81,7 +81,7 @@ export class DetailsPage {
     confirm.present();
   }
 
-  /*openImagePicker(){
+  openImagePicker(){
     this.imagePicker.hasReadPermission()
     .then((result) => {
       if(result == false){
@@ -122,5 +122,4 @@ export class DetailsPage {
       toast.present();
     })
   }
-*/
 }

@@ -1,21 +1,31 @@
 import { Component } from '@angular/core';
-import { ViewController, normalizeURL, ToastController, LoadingController } from 'ionic-angular';
+import { IonicPage, ViewController, normalizeURL, ToastController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FirebaseService } from '../services/firebase.service';
 
 import { ImagePicker } from '@ionic-native/image-picker';
+/**
+ * Generated class for the BandMemberDetailsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
+@IonicPage()
 @Component({
-  selector: 'page-new-task-modal',
-  templateUrl: 'new-task-modal.html'
+  selector: 'page-band-member-details',
+  templateUrl: 'band-member-details.html',
 })
-export class NewTaskModalPage {
+export class BandMemberDetailsPage {
 
   validations_form: FormGroup;
   image: any;
+  item: any;
   loading: any;
 
   constructor(
+    private navParams: NavParams,
+    private alertCtrl: AlertController,
     private viewCtrl: ViewController,
     private toastCtrl: ToastController,
     private formBuilder: FormBuilder,
@@ -27,15 +37,17 @@ export class NewTaskModalPage {
   }
 
   ionViewWillLoad(){
-    this.resetFields()
+    this.getData()
   }
 
-  resetFields(){
-    this.image = "./assets/imgs/profile.png";
+  getData(){
+    this.item = this.navParams.get('data');
+    this.image = this.item.image;
     this.validations_form = this.formBuilder.group({
-      title: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required)
+      title: new FormControl(this.item.title, Validators.required),
+      description: new FormControl(this.item.description, Validators.required)
     });
+    console.log(this.item);
   }
 
   dismiss() {
@@ -48,13 +60,36 @@ export class NewTaskModalPage {
       description: value.description,
       image: this.image
     }
-    this.firebaseService.createTask(data)
+    this.firebaseService.updateMember(this.item.id,data)
     .then(
       res => {
-        this.resetFields();
         this.viewCtrl.dismiss();
       }
     )
+  }
+
+  delete() {
+    let confirm = this.alertCtrl.create({
+      title: 'Confirm',
+      message: 'Do you want to delete ' + this.item.title + '?',
+      buttons: [
+        {
+          text: 'No',
+          handler: () => {}
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+            this.firebaseService.deleteMember(this.item.id)
+            .then(
+              res => this.viewCtrl.dismiss(),
+              err => console.log(err)
+            )
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 
   openImagePicker(){
@@ -84,6 +119,7 @@ export class NewTaskModalPage {
     this.loading.present();
     image = normalizeURL(image);
     let randomId = Math.random().toString(36).substr(2, 5);
+    console.log(randomId);
 
     //uploads img to firebase storage
     this.firebaseService.uploadImage(image, randomId)
@@ -95,6 +131,11 @@ export class NewTaskModalPage {
         duration: 3000
       });
       toast.present();
-      })
+    })
   }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad BandMemberDetailsPage');
+  }
+
 }

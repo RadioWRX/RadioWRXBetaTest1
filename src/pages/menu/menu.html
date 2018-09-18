@@ -1,9 +1,14 @@
 <ion-header>
   <ion-toolbar color="secondary">
-    <ion-title>Firebase CRUD</ion-title>
+    <ion-title>Profile</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="openNewUserModal()">
         <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>
@@ -20,6 +25,7 @@
       </ion-item>
     </ion-list>
   </div>
+  <button ion-button block color="primary" (click)="goToCreateBandMember()">Band Members</button>
 </ion-content>
 <ion-footer (click)="logout()">
   <ion-toolbar color="secondary">
