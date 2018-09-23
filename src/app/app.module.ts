@@ -18,8 +18,17 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { DetailsPage } from '../pages/details/details';
 import { NewTaskModalPage } from '../pages/new-task-modal/new-task-modal';
 import { CreateBandMemberPage } from '../pages/create-band-member/create-band-member';
+import { CreateBandEventPage } from '../pages/create-band-event/create-band-event';
 import { NewBandMemberModalPage } from '../pages/new-band-member-modal/new-band-member-modal';
+import { NewBandEventModalPage } from '../pages/new-band-event-modal/new-band-event-modal';
 import { BandMemberDetailsPage } from '../pages/band-member-details/band-member-details';
+import { BandEventDetailsPage } from '../pages/band-event-details/band-event-details';
+import { CreateAlbumPage } from '../pages/create-album/create-album';
+import { AlbumDetailsPage } from '../pages/album-details/album-details';
+import { NewAlbumModalPage } from '../pages/new-album-modal/new-album-modal';
+import { BandViewAlbumPage } from '../pages/band-view-album/band-view-album';
+import { NewSongModalPage } from '../pages/new-song-modal/new-song-modal';
+
 
 import { FirebaseService } from '../pages/services/firebase.service';
 import { AuthService } from '../pages/services/auth.service';
@@ -45,7 +54,15 @@ import { environment } from '../environment/environment';
     BandProfilePage,
     CreateBandMemberPage,
     NewBandMemberModalPage,
-    BandMemberDetailsPage
+    BandMemberDetailsPage,
+    CreateBandEventPage,
+    NewBandEventModalPage,
+    BandEventDetailsPage,
+    CreateAlbumPage,
+    AlbumDetailsPage,
+    NewAlbumModalPage,
+    BandViewAlbumPage,
+    NewSongModalPage
   ],
   imports: [
     BrowserModule,
@@ -70,7 +87,15 @@ import { environment } from '../environment/environment';
     BandProfilePage,
     CreateBandMemberPage,
     NewBandMemberModalPage,
-    BandMemberDetailsPage
+    BandMemberDetailsPage,
+    CreateBandEventPage,
+    NewBandEventModalPage,
+    BandEventDetailsPage,
+    CreateAlbumPage,
+    AlbumDetailsPage,
+    NewAlbumModalPage,
+    BandViewAlbumPage,
+    NewSongModalPage
   ],
   providers: [
     StatusBar,

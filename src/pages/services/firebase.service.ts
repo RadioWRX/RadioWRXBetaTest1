@@ -7,9 +7,12 @@ import 'firebase/storage';
 @Injectable()
 export class FirebaseService {
 
+  docId: string;
+
   private snapshotChangesSubscription: any;
   constructor(public afs: AngularFirestore){}
 
+  //Allow user to retrieve tasks.
   getTasks(){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
@@ -20,12 +23,16 @@ export class FirebaseService {
     });
   }
 
+  //Unsubsribe user after logout.
   unsubscribeOnLogOut(){
     //remember to unsubscribe from the snapshotChanges
     // debugger;
     this.snapshotChangesSubscription.unsubscribe();
   }
 
+  //This section of code deals with the CRUD of tasks.
+
+  //Allow user to update a task.
   updateTask(taskKey, value){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
@@ -37,6 +44,7 @@ export class FirebaseService {
     })
   }
 
+  //Allow user to delete a task.
   deleteTask(taskKey){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
@@ -48,6 +56,7 @@ export class FirebaseService {
     })
   }
 
+  //Allow user to creat a task.
   createTask(value){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
@@ -63,6 +72,9 @@ export class FirebaseService {
     })
   }
 
+  //This section of code deals with the CRUD of Members.
+
+  //Allow user to delete a task.
   deleteMember(memberKey){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
@@ -74,7 +86,7 @@ export class FirebaseService {
     })
   }
 
-  //Get Band Members
+  //Allow user to get Band Members.
   getMembers(){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
@@ -85,6 +97,7 @@ export class FirebaseService {
     });
   }
 
+  //Alllow user to update Band Members.
   updateMember(memberKey, value){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
@@ -96,7 +109,7 @@ export class FirebaseService {
     })
   }
 
-  //Creat a band member
+  //Allow user to create a Band Member.
   createMember(value){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
@@ -112,6 +125,157 @@ export class FirebaseService {
     })
   }
 
+  //This section of code deals with the CRUD of Events.
+
+  //Allow user to get Band Events.
+  getEvents(){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.snapshotChangesSubscription = this.afs.collection('band').doc(currentUser.uid).collection('events').snapshotChanges()
+      .subscribe(snapshots => {
+        resolve(snapshots);
+      })
+    });
+  }
+
+  //Allow user to create a Band Event.
+  createEvent(value){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('band').doc(currentUser.uid).collection('events').add({
+        title: value.title,
+        description: value.description,
+        image: value.image
+      })
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+  //Allow user to delete an event.
+  deleteEvent(eventKey){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('band').doc(currentUser.uid).collection('events').doc(eventKey).delete()
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+  //Alllow user to update Events.
+  updateEvent(eventKey, value){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('band').doc(currentUser.uid).collection('events').doc(eventKey).set(value)
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+  //Allow user to get Albums
+  getAlbums(){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.snapshotChangesSubscription = this.afs.collection('band').doc(currentUser.uid).collection('albums').snapshotChanges()
+      .subscribe(snapshots => {
+        resolve(snapshots);
+      })
+    });
+  }
+
+  //Allow user to create an Album.
+  createAlbum(value){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('band').doc(currentUser.uid).collection('albums').add({
+        title: value.title,
+        description: value.description,
+        image: value.image
+      })
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+  //Allow user to delete an album.
+  deleteAlbum(albumKey){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('band').doc(currentUser.uid).collection('albums').doc(albumKey).delete()
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+  //Alllow user to update Events.
+  updateAlbum(albumKey, value){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('band').doc(currentUser.uid).collection('albums').doc(albumKey).set(value)
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+  //Allow user to get songs
+  getSongs(){
+    return new Promise<any>((resolve, reject) => {
+      this.docId = localStorage.getItem('id');
+      let currentUser = firebase.auth().currentUser;
+      this.snapshotChangesSubscription = this.afs.collection('band').doc(currentUser.uid).collection('albums').doc(this.docId).collection('songs').snapshotChanges()
+      .subscribe(snapshots => {
+        resolve(snapshots);
+      })
+    });
+  }
+
+  //Allow user to creat append a song to an album.
+  createSong(value){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.docId = localStorage.getItem('id');
+      this.afs.collection('band').doc(currentUser.uid).collection('albums').doc(this.docId).collection('songs').add({
+        title: value.title,
+        description: value.description,
+        //image: value.image,
+        //id: value.id
+      })
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+  //Allow user to delete an album.
+  deleteSong(songKey){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.docId = localStorage.getItem('id')
+      this.afs.collection('band').doc(currentUser.uid).collection('albums').doc(this.docId).collection('songs').doc(songKey).delete()
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+  //This section of code deals with the ImagePicker upload. FIX!!!
+
+  //Allow user to pick an image. FIX!!! ImagePicker not currentl working properly
+  //but default images are storing in Firebase Database.
   encodeImageUri(imageUri, callback) {
     var c = document.createElement('canvas');
     var ctx = c.getContext("2d");

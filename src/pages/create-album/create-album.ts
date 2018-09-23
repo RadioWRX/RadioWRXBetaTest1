@@ -2,18 +2,19 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angular';
 import { AuthService } from '../services/auth.service';
 import { FirebaseService } from '../services/firebase.service';
-import { NewBandMemberModalPage } from '../new-band-member-modal/new-band-member-modal';
-import { BandMemberDetailsPage } from '../band-member-details/band-member-details';
-import { BandEventDetailsPage } from '../band-event-details/band-event-details';
+import { NewAlbumModalPage } from '../new-album-modal/new-album-modal';
+import { BandViewAlbumPage } from '../band-view-album/band-view-album';
 
 @IonicPage()
 @Component({
-  selector: 'page-create-band-member',
-  templateUrl: 'create-band-member.html',
+  selector: 'page-create-album',
+  templateUrl: 'create-album.html',
 })
-export class CreateBandMemberPage {
+export class CreateAlbumPage {
 
   items: Array<any>;
+
+  refId: string;
 
   constructor(
     public navCtrl: NavController,
@@ -23,40 +24,44 @@ export class CreateBandMemberPage {
     private firebaseService: FirebaseService) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CreateBandMemberPage');
-  }
-
   ionViewWillEnter(){
     this.getData();
   }
 
   getData(){
-    this.firebaseService.getMembers()
-    .then(members => {
-      this.items = members;
+    this.firebaseService.getAlbums()
+    .then(albums => {
+      this.items = albums;
     })
   }
 
-  viewMemberDetails(id, item) {
+  viewAlbumDetails(id, item) {
+    //refId = 'shit';
     // debugger
     let data = {
       title: item.title,
       description: item.description,
-      image: item.image,
-      id: id
+      //image: item.image,
+      //id: id
     }
-    this.navCtrl.push(BandMemberDetailsPage, {
+    localStorage.setItem("id", id);
+    //alert(id);
+    this.navCtrl.push(BandViewAlbumPage, {
       data: data
     })
+    console.log(data);
   }
 
-  openNewBandMemberModal(){
-    let modal = this.modalCtrl.create(NewBandMemberModalPage);
+  openNewAlbumModal(){
+    let modal = this.modalCtrl.create(NewAlbumModalPage);
       modal.onDidDismiss(data => {
         this.getData();
       });
       modal.present();
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad CreateAlbumPage');
   }
 
 }

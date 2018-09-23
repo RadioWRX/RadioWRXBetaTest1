@@ -47,7 +47,7 @@ export class BandMemberDetailsPage {
       title: new FormControl(this.item.title, Validators.required),
       description: new FormControl(this.item.description, Validators.required)
     });
-    console.log(this.item);
+    //console.log(this.item);
   }
 
   dismiss() {

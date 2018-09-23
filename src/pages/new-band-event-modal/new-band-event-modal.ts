@@ -7,10 +7,10 @@ import { ImagePicker } from '@ionic-native/image-picker';
 
 @IonicPage()
 @Component({
-  selector: 'page-new-band-member-modal',
-  templateUrl: 'new-band-member-modal.html',
+  selector: 'page-new-band-event-modal',
+  templateUrl: 'new-band-event-modal.html',
 })
-export class NewBandMemberModalPage {
+export class NewBandEventModalPage {
 
   validations_form: FormGroup;
   image: any;
@@ -22,9 +22,7 @@ export class NewBandMemberModalPage {
     private formBuilder: FormBuilder,
     private firebaseService: FirebaseService,
     private loadingCtrl: LoadingController,
-    private imagePicker: ImagePicker
-  ) {
-      this.loading = this.loadingCtrl.create();
+    private imagePicker: ImagePicker) {
   }
 
   ionViewWillLoad(){
@@ -49,7 +47,7 @@ export class NewBandMemberModalPage {
       description: value.description,
       image: this.image
     }
-    this.firebaseService.createMember(data)
+    this.firebaseService.createEvent(data)
     .then(
       res => {
         this.resetFields();
@@ -99,9 +97,8 @@ export class NewBandMemberModalPage {
       })
   }
 
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NewBandMemberModalPage');
+    console.log('ionViewDidLoad NewBandEventModalPage');
   }
 
 }

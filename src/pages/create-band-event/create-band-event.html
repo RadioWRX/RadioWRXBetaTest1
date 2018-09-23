@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Create Event</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openNewBandEventModal()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="list-mini-content">
+  <div class="list-mini">
+    <ion-list>
+      <ion-item *ngFor="let item of items" (click)="viewEventDetails(item.payload.doc.id,item.payload.doc.data())">
+        <ion-thumbnail item-start>
+          <img [src]="item.payload.doc.data().image">
+        </ion-thumbnail>
+        <h2>{{item.payload.doc.data().title}}</h2>
+        <button ion-button clear item-end>Details</button>
+      </ion-item>
+    </ion-list>
+  </div>
+  <h5 text-center>Click      <ion-icon name="add"></ion-icon>     to create Band Event</h5>
+</ion-content>

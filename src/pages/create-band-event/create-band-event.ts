@@ -2,16 +2,15 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angular';
 import { AuthService } from '../services/auth.service';
 import { FirebaseService } from '../services/firebase.service';
-import { NewBandMemberModalPage } from '../new-band-member-modal/new-band-member-modal';
-import { BandMemberDetailsPage } from '../band-member-details/band-member-details';
+import { NewBandEventModalPage } from '../new-band-event-modal/new-band-event-modal';
 import { BandEventDetailsPage } from '../band-event-details/band-event-details';
 
 @IonicPage()
 @Component({
-  selector: 'page-create-band-member',
-  templateUrl: 'create-band-member.html',
+  selector: 'page-create-band-event',
+  templateUrl: 'create-band-event.html',
 })
-export class CreateBandMemberPage {
+export class CreateBandEventPage {
 
   items: Array<any>;
 
@@ -23,22 +22,18 @@ export class CreateBandMemberPage {
     private firebaseService: FirebaseService) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CreateBandMemberPage');
-  }
-
   ionViewWillEnter(){
     this.getData();
   }
 
   getData(){
-    this.firebaseService.getMembers()
-    .then(members => {
-      this.items = members;
+    this.firebaseService.getEvents()
+    .then(events => {
+      this.items = events;
     })
   }
 
-  viewMemberDetails(id, item) {
+  viewEventDetails(id, item) {
     // debugger
     let data = {
       title: item.title,
@@ -46,17 +41,21 @@ export class CreateBandMemberPage {
       image: item.image,
       id: id
     }
-    this.navCtrl.push(BandMemberDetailsPage, {
+    this.navCtrl.push(BandEventDetailsPage, {
       data: data
     })
   }
 
-  openNewBandMemberModal(){
-    let modal = this.modalCtrl.create(NewBandMemberModalPage);
+  openNewBandEventModal(){
+    let modal = this.modalCtrl.create(NewBandEventModalPage);
       modal.onDidDismiss(data => {
         this.getData();
       });
       modal.present();
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad CreateBandEventPage');
   }
 
 }

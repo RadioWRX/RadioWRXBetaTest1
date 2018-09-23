@@ -6,6 +6,8 @@ import { NewTaskModalPage } from '../new-task-modal/new-task-modal';
 import { DetailsPage } from '../details/details';
 import { LoginPage } from '../login/login';
 import { CreateBandMemberPage } from '../create-band-member/create-band-member';
+import { CreateBandEventPage } from '../create-band-event/create-band-event';
+import { CreateAlbumPage } from '../create-album/create-album';
 
 
 @Component({
@@ -65,6 +67,14 @@ export class MenuPage {
 
   goToCreateBandMember() {
     this.navCtrl.push(CreateBandMemberPage);
+  }
+
+  goToCreateBandEvent() {
+    this.navCtrl.push(CreateBandEventPage);
+  }
+
+  goToCreateAlbum() {
+    this.navCtrl.push(CreateAlbumPage);
   }
 
 }

@@ -7,10 +7,10 @@ import { ImagePicker } from '@ionic-native/image-picker';
 
 @IonicPage()
 @Component({
-  selector: 'page-new-band-member-modal',
-  templateUrl: 'new-band-member-modal.html',
+  selector: 'page-new-album-modal',
+  templateUrl: 'new-album-modal.html',
 })
-export class NewBandMemberModalPage {
+export class NewAlbumModalPage {
 
   validations_form: FormGroup;
   image: any;
@@ -24,7 +24,7 @@ export class NewBandMemberModalPage {
     private loadingCtrl: LoadingController,
     private imagePicker: ImagePicker
   ) {
-      this.loading = this.loadingCtrl.create();
+    this.loading = this.loadingCtrl.create();
   }
 
   ionViewWillLoad(){
@@ -49,7 +49,7 @@ export class NewBandMemberModalPage {
       description: value.description,
       image: this.image
     }
-    this.firebaseService.createMember(data)
+    this.firebaseService.createAlbum(data)
     .then(
       res => {
         this.resetFields();
@@ -99,9 +99,8 @@ export class NewBandMemberModalPage {
       })
   }
 
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NewBandMemberModalPage');
+    console.log('ionViewDidLoad NewAlbumModalPage');
   }
 
 }
