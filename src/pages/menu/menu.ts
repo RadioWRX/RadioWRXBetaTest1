@@ -5,9 +5,10 @@ import { FirebaseService } from '../services/firebase.service';
 import { NewTaskModalPage } from '../new-task-modal/new-task-modal';
 import { DetailsPage } from '../details/details';
 import { LoginPage } from '../login/login';
-import { CreateBandMemberPage } from '../create-band-member/create-band-member';
-import { CreateBandEventPage } from '../create-band-event/create-band-event';
+import { ViewBandEventsPage } from '../view-band-events/view-band-events';
 import { CreateAlbumPage } from '../create-album/create-album';
+import { ViewBandsByFansPage } from '../view-bands-by-fans/view-bands-by-fans';
+import { ViewBandMembersPage } from '../view-band-members/view-band-members';
 
 
 @Component({
@@ -65,16 +66,20 @@ export class MenuPage {
     })
   }
 
-  goToCreateBandMember() {
-    this.navCtrl.push(CreateBandMemberPage);
+  goToViewBandMember() {
+    this.navCtrl.push(ViewBandMembersPage);
   }
 
   goToCreateBandEvent() {
-    this.navCtrl.push(CreateBandEventPage);
+    this.navCtrl.push(ViewBandEventsPage);
   }
 
   goToCreateAlbum() {
     this.navCtrl.push(CreateAlbumPage);
+  }
+
+  goToCreateBandsByFans() {
+    this.navCtrl.push(ViewBandsByFansPage);
   }
 
 }

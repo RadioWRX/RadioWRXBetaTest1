@@ -28,7 +28,16 @@ import { AlbumDetailsPage } from '../pages/album-details/album-details';
 import { NewAlbumModalPage } from '../pages/new-album-modal/new-album-modal';
 import { BandViewAlbumPage } from '../pages/band-view-album/band-view-album';
 import { NewSongModalPage } from '../pages/new-song-modal/new-song-modal';
-
+import { EditSongPage } from '../pages/edit-song/edit-song';
+import { EditBandMemberPage } from '../pages/edit-band-member/edit-band-member';
+import { EditBandEventPage } from '../pages/edit-band-event/edit-band-event';
+import { EditAlbumPage } from '../pages/edit-album/edit-album';
+import { CreateBandsByFansPage } from '../pages/create-bands-by-fans/create-bands-by-fans';
+import { ViewBandsByFansPage } from '../pages/view-bands-by-fans/view-bands-by-fans';
+import { BandsByFansDetailsPage } from '../pages/bands-by-fans-details/bands-by-fans-details';
+import { EditBandsByFansPage } from '../pages/edit-bands-by-fans/edit-bands-by-fans';
+import { ViewBandMembersPage } from '../pages/view-band-members/view-band-members';
+import { ViewBandEventsPage } from '../pages/view-band-events/view-band-events';
 
 import { FirebaseService } from '../pages/services/firebase.service';
 import { AuthService } from '../pages/services/auth.service';
@@ -62,7 +71,17 @@ import { environment } from '../environment/environment';
     AlbumDetailsPage,
     NewAlbumModalPage,
     BandViewAlbumPage,
-    NewSongModalPage
+    NewSongModalPage,
+    EditSongPage,
+    EditBandMemberPage,
+    EditBandEventPage,
+    EditAlbumPage,
+    CreateBandsByFansPage,
+    ViewBandsByFansPage,
+    BandsByFansDetailsPage,
+    EditBandsByFansPage,
+    ViewBandMembersPage,
+    ViewBandEventsPage
   ],
   imports: [
     BrowserModule,
@@ -95,7 +114,17 @@ import { environment } from '../environment/environment';
     AlbumDetailsPage,
     NewAlbumModalPage,
     BandViewAlbumPage,
-    NewSongModalPage
+    NewSongModalPage,
+    EditSongPage,
+    EditBandMemberPage,
+    EditBandEventPage,
+    EditAlbumPage,
+    CreateBandsByFansPage,
+    ViewBandsByFansPage,
+    BandsByFansDetailsPage,
+    EditBandsByFansPage,
+    ViewBandMembersPage,
+    ViewBandEventsPage
   ],
   providers: [
     StatusBar,

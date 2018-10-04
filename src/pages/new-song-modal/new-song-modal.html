@@ -20,9 +20,6 @@
       </ion-col>
     </ion-row>
   </div>
-  <div>
-    <button ion-button (click)="getLocalStorageId()"></button>
-  </div>
   <form class="new-user-form" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     <ion-item>
       <ion-label floating color="primary">Title</ion-label>

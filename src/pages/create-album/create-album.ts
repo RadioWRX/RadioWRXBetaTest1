@@ -4,6 +4,7 @@ import { AuthService } from '../services/auth.service';
 import { FirebaseService } from '../services/firebase.service';
 import { NewAlbumModalPage } from '../new-album-modal/new-album-modal';
 import { BandViewAlbumPage } from '../band-view-album/band-view-album';
+import { EditAlbumPage } from '../edit-album/edit-album';
 
 @IonicPage()
 @Component({
@@ -41,12 +42,29 @@ export class CreateAlbumPage {
     let data = {
       title: item.title,
       description: item.description,
-      //image: item.image,
+      image: item.image
       //id: id
     }
     localStorage.setItem("id", id);
     //alert(id);
     this.navCtrl.push(BandViewAlbumPage, {
+      data: data
+    })
+    console.log(data);
+  }
+
+  editAlbumDetails(id, item) {
+    //refId = 'shit';
+    // debugger
+    let data = {
+      title: item.title,
+      description: item.description,
+      image: item.image,
+      //id: id
+    }
+    localStorage.setItem("id", id);
+    alert(id);
+    this.navCtrl.push(EditAlbumPage, {
       data: data
     })
     console.log(data);

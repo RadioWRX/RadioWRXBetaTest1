@@ -1,15 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, ViewController, normalizeURL, ToastController, NavParams, AlertController, LoadingController, ModalController } from 'ionic-angular';
+import { IonicPage, ViewController, NavController, normalizeURL, ToastController, NavParams, AlertController, LoadingController, ModalController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FirebaseService } from '../services/firebase.service';
 import { NewSongModalPage } from '../new-song-modal/new-song-modal';
-
-/**
- * Generated class for the BandViewAlbumPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { EditSongPage } from '../edit-song/edit-song';
 
 @IonicPage()
 @Component({
@@ -30,6 +24,7 @@ export class BandViewAlbumPage {
 
   constructor(
     public navParams: NavParams,
+    private navCtrl: NavController,
     private viewCtrl: ViewController,
     private toastCtrl: ToastController,
     private alertCtrl: AlertController,
@@ -55,6 +50,18 @@ export class BandViewAlbumPage {
    this.viewCtrl.dismiss();
   }
 
+  editSongDetails(id, item) {
+    // debugger
+    let data = {
+      title: item.title,
+      description: item.description,
+      id: id
+    }
+    this.navCtrl.push(EditSongPage, {
+      data: data
+    })
+  }
+
   openNewSongModal(){
     let modal = this.modalCtrl.create(NewSongModalPage);
       modal.onDidDismiss(data => {
@@ -62,8 +69,6 @@ export class BandViewAlbumPage {
       });
       modal.present();
   }
-
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BandViewAlbumPage');

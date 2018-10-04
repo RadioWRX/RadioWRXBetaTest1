@@ -78,7 +78,8 @@ export class FirebaseService {
   deleteMember(memberKey){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
-      this.afs.collection('band').doc(currentUser.uid).collection('members').doc(memberKey).delete()
+      this.docId = localStorage.getItem('id');
+      this.afs.collection('band').doc(currentUser.uid).collection('members').doc(this.docId).delete()
       .then(
         res => resolve(res),
         err => reject(err)
@@ -100,8 +101,9 @@ export class FirebaseService {
   //Alllow user to update Band Members.
   updateMember(memberKey, value){
     return new Promise<any>((resolve, reject) => {
+      this.docId = localStorage.getItem('id');
       let currentUser = firebase.auth().currentUser;
-      this.afs.collection('band').doc(currentUser.uid).collection('members').doc(memberKey).set(value)
+      this.afs.collection('band').doc(currentUser.uid).collection('members').doc(this.docId).set(value)
       .then(
         res => resolve(res),
         err => reject(err)
@@ -114,9 +116,11 @@ export class FirebaseService {
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
       this.afs.collection('band').doc(currentUser.uid).collection('members').add({
-        title: value.title,
-        description: value.description,
-        image: value.image
+        name: value.name,
+        biography: value.biography,
+        image: value.image,
+        instrument: value.instrument,
+        dob: value.dob
       })
       .then(
         res => resolve(res),
@@ -157,8 +161,9 @@ export class FirebaseService {
   //Allow user to delete an event.
   deleteEvent(eventKey){
     return new Promise<any>((resolve, reject) => {
+      this.docId = localStorage.getItem('id');
       let currentUser = firebase.auth().currentUser;
-      this.afs.collection('band').doc(currentUser.uid).collection('events').doc(eventKey).delete()
+      this.afs.collection('band').doc(currentUser.uid).collection('events').doc(this.docId).delete()
       .then(
         res => resolve(res),
         err => reject(err)
@@ -169,8 +174,9 @@ export class FirebaseService {
   //Alllow user to update Events.
   updateEvent(eventKey, value){
     return new Promise<any>((resolve, reject) => {
+      this.docId = localStorage.getItem('id');
       let currentUser = firebase.auth().currentUser;
-      this.afs.collection('band').doc(currentUser.uid).collection('events').doc(eventKey).set(value)
+      this.afs.collection('band').doc(currentUser.uid).collection('events').doc(this.docId).set(value)
       .then(
         res => resolve(res),
         err => reject(err)
@@ -206,10 +212,11 @@ export class FirebaseService {
   }
 
   //Allow user to delete an album.
-  deleteAlbum(albumKey){
+  deleteAlbum(docId){
     return new Promise<any>((resolve, reject) => {
+      this.docId = localStorage.getItem('id');
       let currentUser = firebase.auth().currentUser;
-      this.afs.collection('band').doc(currentUser.uid).collection('albums').doc(albumKey).delete()
+      this.afs.collection('band').doc(currentUser.uid).collection('albums').doc(this.docId).delete()
       .then(
         res => resolve(res),
         err => reject(err)
@@ -217,11 +224,12 @@ export class FirebaseService {
     })
   }
 
-  //Alllow user to update Events.
+  //Alllow user to update Album.
   updateAlbum(albumKey, value){
     return new Promise<any>((resolve, reject) => {
+      this.docId = localStorage.getItem('id');
       let currentUser = firebase.auth().currentUser;
-      this.afs.collection('band').doc(currentUser.uid).collection('albums').doc(albumKey).set(value)
+      this.afs.collection('band').doc(currentUser.uid).collection('albums').doc(this.docId).set(value)
       .then(
         res => resolve(res),
         err => reject(err)
@@ -263,8 +271,76 @@ export class FirebaseService {
   deleteSong(songKey){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
-      this.docId = localStorage.getItem('id')
+      this.docId = localStorage.getItem('id');
       this.afs.collection('band').doc(currentUser.uid).collection('albums').doc(this.docId).collection('songs').doc(songKey).delete()
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+  //Alllow user to update Songs.
+  updateSong(songKey, value){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.docId = localStorage.getItem('id')
+      this.afs.collection('band').doc(currentUser.uid).collection('albums').doc(this.docId).collection('songs').doc(songKey).set(value)
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+  //Allow user to get Band Events.
+  getBandsByFans(){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.snapshotChangesSubscription = this.afs.collection('band').doc(currentUser.uid).collection('bandsbyfans').snapshotChanges()
+      .subscribe(snapshots => {
+        resolve(snapshots);
+      })
+    });
+  }
+
+  //Allow user to create Bands By Fans instance.
+  createBandsByFans(value){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      //this.docId = localStorage.getItem('id');
+      this.afs.collection('band').doc(currentUser.uid).collection('bandsbyfans').add({
+        title: value.title,
+        description: value.description,
+        image: value.image
+        //id: value.id
+      })
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+  //Allow user to delete an album.
+  deleteBandsByFans(docId){
+    return new Promise<any>((resolve, reject) => {
+      this.docId = localStorage.getItem('id');
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('band').doc(currentUser.uid).collection('bandsbyfans').doc(this.docId).delete()
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+  //Alllow user to update Album.
+  updateBandsByFans(albumKey, value){
+    return new Promise<any>((resolve, reject) => {
+      this.docId = localStorage.getItem('id');
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('band').doc(currentUser.uid).collection('bandsbyfans').doc(this.docId).set(value)
       .then(
         res => resolve(res),
         err => reject(err)
@@ -306,7 +382,4 @@ export class FirebaseService {
       })
     })
   }
-
-
-
 }

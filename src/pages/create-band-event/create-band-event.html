@@ -1,28 +1,35 @@
+
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Create Event</ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="openNewBandEventModal()">
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </ion-buttons>
+  <ion-navbar color="dark">
+    <ion-title>Add Event</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content class="list-mini-content">
-  <div class="list-mini">
-    <ion-list>
-      <ion-item *ngFor="let item of items" (click)="viewEventDetails(item.payload.doc.id,item.payload.doc.data())">
-        <ion-thumbnail item-start>
-          <img [src]="item.payload.doc.data().image">
-        </ion-thumbnail>
-        <h2>{{item.payload.doc.data().title}}</h2>
-        <button ion-button clear item-end>Details</button>
-      </ion-item>
-    </ion-list>
+<ion-content padding>
+  <div>
+    <ion-row no-padding>
+      <ion-col no-padding col-6 offset-3>
+        <img [src]="image" alt="this is the image"/>
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding class="user-image-row">
+      <ion-col no-padding width-60>
+        <button class="image-action-button" ion-button outline block small (click)="openImagePicker()">Change Picture</button>
+      </ion-col>
+    </ion-row>
   </div>
-  <h5 text-center>Click      <ion-icon name="add"></ion-icon>     to create Band Event</h5>
+  <form class="new-user-form" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    <ion-item>
+      <ion-label floating color="primary">Title</ion-label>
+      <ion-input type="text" formControlName="title" class="form-control" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Description</ion-label>
+      <ion-input type="text" formControlName="description" class="form-control" required></ion-input>
+    </ion-item>
+    <button class="form-action-button" ion-button block type="submit" [disabled]="!validations_form.valid">Create</button>
+  </form>
 </ion-content>

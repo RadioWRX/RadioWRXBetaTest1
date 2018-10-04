@@ -1,36 +1,40 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title>{{this.item.title}}</ion-title>
+    <ion-title>{{this.item.name}}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
-  <div class="user-image-content">
-    <ion-row no-padding class="user-image-row">
-      <ion-col no-padding col-6 offset-3>
-        <img [src]="image" alt="this is the image"/>
+<ion-content>
+  <ion-card>
+    <ion-row>
+      <ion-col col-1>
+      </ion-col>
+      <ion-col col-10 text-center>
+        <h1>{{this.item.name}}</h1>
+        <h5>{{this.item.dob}}</h5>
+      </ion-col>
+      <ion-col col-1>
       </ion-col>
     </ion-row>
-    <ion-row no-padding class="user-image-row">
-      <ion-col no-padding width-60>
-        <button class="image-action-button" ion-button outline block small (click)="openImagePicker()">Change Picture</button>
-      </ion-col>
-    </ion-row>
-  </div>
-  <form class="new-user-form" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     <ion-item>
-      <ion-label floating color="primary">Title</ion-label>
-      <ion-input type="text" formControlName="title" class="form-control" required></ion-input>
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+          <img [src]="this.item.image">
+        </ion-col>
+        <ion-col>
+        </ion-col>
+      </ion-row>
     </ion-item>
-    <ion-item>
-      <ion-label floating color="primary">Description</ion-label>
-      <ion-input type="text" formControlName="description" class="form-control" required></ion-input>
-    </ion-item>
-    <button class="form-action-button" ion-button block type="submit" [disabled]="!validations_form.valid">Save</button>
-  </form>
-  <button class="form-action-button" ion-button block color="danger" (click)="delete()">Delete</button>
-
+    <ion-card-content>
+      <h1 text-center>Biography</h1>
+      <p class="biography-text">{{this.item.biography}}</p>
+    </ion-card-content>
+    <ion-card-content>
+      <h1 text-center>Instruments</h1>
+      <h2 text-center>{{this.item.instrument}}</h2>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

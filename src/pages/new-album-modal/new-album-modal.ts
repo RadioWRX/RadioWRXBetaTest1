@@ -32,7 +32,7 @@ export class NewAlbumModalPage {
   }
 
   resetFields(){
-    this.image = "./assets/imgs/profile.png";
+    this.image = "./assets/imgs/album.jpeg";
     this.validations_form = this.formBuilder.group({
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required)

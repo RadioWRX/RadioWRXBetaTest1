@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angular';
-import { AuthService } from '../services/auth.service';
+import { IonicPage, ViewController, normalizeURL, ToastController, LoadingController } from 'ionic-angular';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FirebaseService } from '../services/firebase.service';
-import { NewBandEventModalPage } from '../new-band-event-modal/new-band-event-modal';
 import { BandEventDetailsPage } from '../band-event-details/band-event-details';
+
+import { ImagePicker } from '@ionic-native/image-picker';
 
 @IonicPage()
 @Component({
@@ -12,46 +13,49 @@ import { BandEventDetailsPage } from '../band-event-details/band-event-details';
 })
 export class CreateBandEventPage {
 
-  items: Array<any>;
+  validations_form: FormGroup;
+  image: any;
+  loading: any;
 
   constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    private modalCtrl: ModalController,
-    private authService: AuthService,
-    private firebaseService: FirebaseService) {
+    private viewCtrl: ViewController,
+    private toastCtrl: ToastController,
+    private formBuilder: FormBuilder,
+    private firebaseService: FirebaseService,
+    private loadingCtrl: LoadingController,
+    private imagePicker: ImagePicker
+  ) {
   }
 
-  ionViewWillEnter(){
-    this.getData();
+  ionViewWillLoad(){
+    this.resetFields()
   }
 
-  getData(){
-    this.firebaseService.getEvents()
-    .then(events => {
-      this.items = events;
-    })
+  resetFields(){
+    this.image = "./assets/imgs/calendar.png";
+    this.validations_form = this.formBuilder.group({
+      title: new FormControl('', Validators.required),
+      description: new FormControl('', Validators.required)
+    });
   }
 
-  viewEventDetails(id, item) {
-    // debugger
+  dismiss() {
+   this.viewCtrl.dismiss();
+  }
+
+  onSubmit(value){
     let data = {
-      title: item.title,
-      description: item.description,
-      image: item.image,
-      id: id
+      title: value.title,
+      description: value.description,
+      image: this.image
     }
-    this.navCtrl.push(BandEventDetailsPage, {
-      data: data
-    })
-  }
-
-  openNewBandEventModal(){
-    let modal = this.modalCtrl.create(NewBandEventModalPage);
-      modal.onDidDismiss(data => {
-        this.getData();
-      });
-      modal.present();
+    this.firebaseService.createEvent(data)
+    .then(
+      res => {
+        this.resetFields();
+        this.viewCtrl.dismiss();
+      }
+    )
   }
 
   ionViewDidLoad() {
