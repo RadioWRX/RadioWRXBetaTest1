@@ -6,19 +6,29 @@ PODS:
   - CordovaPlugins (1.0.0-beta.7):
     - CapacitorCordova
   - CordovaPluginsResources (0.0.105)
+  - CordovaPluginsStatic (1.0.0-beta.7):
+    - CapacitorCordova
+    - GoogleMaps (~> 2.7.0)
   - GCDWebServer (3.4.2):
     - GCDWebServer/Core (= 3.4.2)
   - GCDWebServer/Core (3.4.2)
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
+    - GoogleMaps/Base
 
 DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
   - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
   - "CordovaPlugins (from `../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins`)"
   - "CordovaPluginsResources (from `../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins`)"
+  - "CordovaPluginsStatic (from `../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins`)"
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - GCDWebServer
+    - GoogleMaps
 
 EXTERNAL SOURCES:
   Capacitor:
@@ -29,14 +39,18 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins"
   CordovaPluginsResources:
     :path: "../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins"
+  CordovaPluginsStatic:
+    :path: "../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins"
 
 SPEC CHECKSUMS:
   Capacitor: 93fe0f060c771ee521f5146973b5e1511ab9a9bf
   CapacitorCordova: 1127cc709c470cbfde4678cd1023e790cdd74313
   CordovaPlugins: 93f6243db85824bd3e61d7ea570458d11db76d49
   CordovaPluginsResources: 83a99c2e0c802a4d8f9c424879e6692629089500
+  CordovaPluginsStatic: 1b09ccc8b1a8462bef97b14aa6edfcb2b09cdc0e
   GCDWebServer: 8d67ee9f634b4bb91eb4b8aee440318a5fc6debd
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
 
-PODFILE CHECKSUM: 172a78117eb5c69347afc82e2e45e61ddaad952c
+PODFILE CHECKSUM: b0d040075379bb69c3bac4ebfe0afb4096e55deb
 
 COCOAPODS: 1.5.3

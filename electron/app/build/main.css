@@ -25677,3 +25677,24 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-bottom));
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
+
+page-band-member-details .center-text {
+  text-align: center;
+}
+
+page-band-member-details .biography-text {
+  text-align: justify;
+}
+
+page-band-view-album ion-icon {
+  font-size: 40px;
+}
+
+page-band-view-album .song-text {
+  vertical-align: middle;
+  padding: 20px;
+}
+
+page-edit-band-member .biography-text {
+  text-align: justify;
+}

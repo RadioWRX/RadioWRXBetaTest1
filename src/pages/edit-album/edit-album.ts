@@ -3,6 +3,8 @@ import { IonicPage, ViewController, normalizeURL, ToastController, NavParams, Al
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FirebaseService } from '../services/firebase.service';
 
+import { ImagePicker } from '@ionic-native/image-picker';
+
 @IonicPage()
 @Component({
   selector: 'page-edit-album',
@@ -22,7 +24,8 @@ export class EditAlbumPage {
     private alertCtrl: AlertController,
     private formBuilder: FormBuilder,
     private firebaseService: FirebaseService,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private imagePicker: ImagePicker
   ) {
     this.loading = this.loadingCtrl.create();
   }
@@ -81,6 +84,14 @@ export class EditAlbumPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditAlbumPage');
+  }
+
+  openImagePicker(options) {
+    this.imagePicker.getPictures(options).then((results) => {
+    for (var i = 0; i < results.length; i++) {
+        console.log('Image URI: ' + results[i]);
+    }
+  }, (err) => { });
   }
 
 }
