@@ -7,26 +7,72 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-row>
+    <ion-col col-1>
+    </ion-col>
+    <ion-col text-center col-10>
+      <h5>{{ this.item.title }}</h5>
+    </ion-col>
+    <ion-col col-1>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-2>
+    </ion-col>
+    <ion-col col-8 text-center>
+      <img [src]="this.item.image" />
+    </ion-col>
+    <ion-col col-2>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-3>
+    </ion-col>
+    <ion-col col-3 text-center>
+      {{ this.item.price }}
+    </ion-col>
+    <ion-col col-3 text-center>
+      {{ this.item.available }}
+    </ion-col>
+    <ion-col col-3>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-1>
+    </ion-col>
+    <ion-col col-10>
+      {{ this.item.description }}
+    </ion-col>
+    <ion-col col-1>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-1>
+    </ion-col>
+    <ion-col col-5>
+      <p>
+        {{ this.item.venue }}
+      </p>
+      <p>
+        {{ this.item.postcode}}
+      </p>
+      <p>
+        {{ this.item.date }}
+      </p>
+      <p>
+        {{ this.item.time }}
+      </p>
+    </ion-col>
+    <ion-col col-5>
+      <div id="map_canvas">
 
-  <div class="list-mini">
-    <ion-list>
-      <ion-item>
-        <ion-grid>
-          <ion-row>
-            <ion-col col-3>
-              <ion-avatar item-start>
-                <img [src]="this.item.image">
-              </ion-avatar>
-            </ion-col>
-            <ion-col col-9>
-              <h2 class="song-text">{{this.item.title}}</h2>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-item>
-    </ion-list>
-  </div>
+      </div>
+    </ion-col>
+    <ion-col col-1>
+    </ion-col>
+  </ion-row>
+
   <div id="map_canvas">
 
   </div>

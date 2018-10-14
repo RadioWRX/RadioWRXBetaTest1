@@ -1,9 +1,9 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title></ion-title>
+    <ion-title>{{ this.title }}</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="openNewSongModal()">
+      <button ion-button icon-only (click)="goToAddSongPage()">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
@@ -12,28 +12,45 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <img [src]="image" alt="this is the image"/>
+      </ion-col>
+      <ion-col col-6>
+        <p>
+          {{ this.title}}
+        </p>
+        <p>
+          {{ this.released }}
+        </p>
+        <p>
+          {{ this.duration }}
+        </p>
+        <p>
+          {{ this.genre }}
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <div class="list-mini">
-    <ion-list>
-      <ion-item *ngFor="let item of items">
-        <ion-grid>
-          <ion-row>
-            <ion-col col-1>
-              <ion-avatar item-start>
-                <ion-icon name="play" large></ion-icon>
-              </ion-avatar>
-            </ion-col>
-            <ion-col col-9>
-              <h2 class="song-text">{{item.payload.doc.data().title}}</h2>
-            </ion-col>
-            <ion-col col-2>
-              <button ion-button clear color="danger" (click)="editSongDetails(item.payload.doc.id,item.payload.doc.data())">Edit</button>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-item>
-    </ion-list>
-  </div>
+  <ion-list>
+    <ion-item *ngFor="let item of items" inset (click)="playSong()">
+      <ion-grid no-padding>
+        <ion-row no-padding>
+          <ion-col col-1>
+            <p class="song-text">{{item.payload.doc.data().songnumber}}</p>
+          </ion-col>
+          <ion-col col-9>
+            <p class="song-text">{{item.payload.doc.data().title}}</p>
+          </ion-col>
+          <ion-col col-2>
+            <button ion-button small clear color="danger" (click)="editSongDetails(item.payload.doc.id,item.payload.doc.data())">Edit</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

@@ -34,16 +34,16 @@ export class EditSongPage {
     this.item = this.navParams.get('data');
     this.image = this.item.image;
     this.validations_form = this.formBuilder.group({
-      title: new FormControl(this.item.title, Validators.required),
-      description: new FormControl(this.item.description, Validators.required)
+      title: new FormControl(this.item.title, Validators.required)
+      //description: new FormControl(this.item.description, Validators.required)
     });
     console.log(this.item);
   }
 
   onSubmit(value){
     let data = {
-      title: value.title,
-      description: value.description
+      title: value.title
+      //description: value.description
     }
     this.firebaseService.updateSong(this.item.id,data)
     .then(

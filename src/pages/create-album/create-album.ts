@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angular';
 import { AuthService } from '../services/auth.service';
 import { FirebaseService } from '../services/firebase.service';
-import { NewAlbumModalPage } from '../new-album-modal/new-album-modal';
+import { AddAlbumPage } from '../add-album/add-album';
 import { BandViewAlbumPage } from '../band-view-album/band-view-album';
 import { EditAlbumPage } from '../edit-album/edit-album';
 
@@ -36,13 +36,22 @@ export class CreateAlbumPage {
     })
   }
 
+  addNewAlbum() {
+    this.navCtrl.push(AddAlbumPage);
+  }
+
   viewAlbumDetails(id, item) {
     //refId = 'shit';
     // debugger
     let data = {
       title: item.title,
       description: item.description,
-      image: item.image
+      image: item.image,
+      released: item.released,
+      totalsongs: item.totalsongs,
+      duration: item.duration,
+      upcean: item.upcean,
+      genre: item.genre
       //id: id
     }
     localStorage.setItem("id", id);
@@ -50,7 +59,7 @@ export class CreateAlbumPage {
     this.navCtrl.push(BandViewAlbumPage, {
       data: data
     })
-    console.log(data);
+    //console.log(data);
   }
 
   editAlbumDetails(id, item) {
@@ -60,22 +69,19 @@ export class CreateAlbumPage {
       title: item.title,
       description: item.description,
       image: item.image,
+      released: item.released,
+      totalsongs: item.totalsongs,
+      duration: item.duration,
+      upcean: item.upcean,
+      genre: item.genre
       //id: id
     }
     localStorage.setItem("id", id);
-    alert(id);
+    //alert(id);
     this.navCtrl.push(EditAlbumPage, {
       data: data
     })
     console.log(data);
-  }
-
-  openNewAlbumModal(){
-    let modal = this.modalCtrl.create(NewAlbumModalPage);
-      modal.onDidDismiss(data => {
-        this.getData();
-      });
-      modal.present();
   }
 
   ionViewDidLoad() {

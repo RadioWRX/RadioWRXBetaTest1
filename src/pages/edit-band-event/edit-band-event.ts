@@ -35,7 +35,13 @@ export class EditBandEventPage {
     this.image = this.item.image;
     this.validations_form = this.formBuilder.group({
       title: new FormControl(this.item.title, Validators.required),
-      description: new FormControl(this.item.description, Validators.required)
+      description: new FormControl(this.item.description, Validators.required),
+      venue: new FormControl(this.item.venue, Validators.required),
+      postcode: new FormControl(this.item.postcode, Validators.required),
+      date: new FormControl(this.item.date, Validators.required),
+      time: new FormControl(this.item.time, Validators.required),
+      price: new FormControl(this.item.price, Validators.required),
+      available: new FormControl(this.item.available, Validators.required)
     });
     console.log(this.item);
   }
@@ -68,7 +74,13 @@ export class EditBandEventPage {
     let data = {
       title: value.title,
       description: value.description,
-      image: this.image
+      image: this.image,
+      venue: value.venue,
+      postcode: value.postcode,
+      date: value.date,
+      time: value.time,
+      price: value.price,
+      available: value.available
     }
     this.firebaseService.updateEvent(this.item.id,data)
     .then(

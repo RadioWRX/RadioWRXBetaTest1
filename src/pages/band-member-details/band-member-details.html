@@ -6,35 +6,33 @@
 
 
 <ion-content>
-  <ion-card>
+  <ion-row>
+    <ion-col col-1>
+    </ion-col>
+    <ion-col col-10 text-center>
+      <h1>{{this.item.name}}</h1>
+      <h5>{{this.item.dob}}</h5>
+    </ion-col>
+    <ion-col col-1>
+    </ion-col>
+  </ion-row>
+  <ion-item>
     <ion-row>
-      <ion-col col-1>
+      <ion-col>
       </ion-col>
-      <ion-col col-10 text-center>
-        <h1>{{this.item.name}}</h1>
-        <h5>{{this.item.dob}}</h5>
+      <ion-col>
+        <img [src]="this.item.image">
       </ion-col>
-      <ion-col col-1>
+      <ion-col>
       </ion-col>
     </ion-row>
-    <ion-item>
-      <ion-row>
-        <ion-col>
-        </ion-col>
-        <ion-col>
-          <img [src]="this.item.image">
-        </ion-col>
-        <ion-col>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-card-content>
-      <h1 text-center>Biography</h1>
-      <p class="biography-text">{{this.item.biography}}</p>
-    </ion-card-content>
-    <ion-card-content>
-      <h1 text-center>Instruments</h1>
-      <h2 text-center>{{this.item.instrument}}</h2>
-    </ion-card-content>
-  </ion-card>
+  </ion-item>
+  <ion-card-content>
+    <h1 text-center>Biography</h1>
+    <p class="biography-text">{{this.item.biography}}</p>
+  </ion-card-content>
+  <ion-card-content>
+    <h1 text-center>Instruments</h1>
+    <h2 text-center>{{this.item.instrument}}</h2>
+  </ion-card-content>
 </ion-content>

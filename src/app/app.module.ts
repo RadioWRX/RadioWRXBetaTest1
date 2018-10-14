@@ -38,6 +38,8 @@ import { BandsByFansDetailsPage } from '../pages/bands-by-fans-details/bands-by-
 import { EditBandsByFansPage } from '../pages/edit-bands-by-fans/edit-bands-by-fans';
 import { ViewBandMembersPage } from '../pages/view-band-members/view-band-members';
 import { ViewBandEventsPage } from '../pages/view-band-events/view-band-events';
+import { AddAlbumPage } from '../pages/add-album/add-album';
+import { AddSongPage } from '../pages/add-song/add-song';
 
 import { FirebaseService } from '../pages/services/firebase.service';
 import { AuthService } from '../pages/services/auth.service';
@@ -81,7 +83,9 @@ import { environment } from '../environment/environment';
     BandsByFansDetailsPage,
     EditBandsByFansPage,
     ViewBandMembersPage,
-    ViewBandEventsPage
+    ViewBandEventsPage,
+    AddAlbumPage,
+    AddSongPage
   ],
   imports: [
     BrowserModule,
@@ -124,7 +128,9 @@ import { environment } from '../environment/environment';
     BandsByFansDetailsPage,
     EditBandsByFansPage,
     ViewBandMembersPage,
-    ViewBandEventsPage
+    ViewBandEventsPage,
+    AddAlbumPage,
+    AddSongPage
   ],
   providers: [
     StatusBar,

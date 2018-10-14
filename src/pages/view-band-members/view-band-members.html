@@ -12,30 +12,28 @@
 </ion-header>
 
 
-<ion-content class="list-mini-content">
-  <div class="list-mini">
-    <ion-list small>
-      <ion-item *ngFor="let item of items">
-        <ion-grid>
-          <ion-row>
-            <ion-col col-2>
-              <ion-avatar item-start>
-                <img [src]="item.payload.doc.data().image">
-              </ion-avatar>
-            </ion-col>
-            <ion-col col-6>
-              <h3>{{ item.payload.doc.data().name }}</h3>
-            </ion-col>
-            <ion-col col-2>
-              <button ion-button clear color="danger" (click)="editBandMembersDetails(item.payload.doc.id,item.payload.doc.data())">Edit</button>
-            </ion-col>
-            <ion-col col-2>
-              <button ion-button clear color="Primary" (click)="viewBandMembersDetails(item.payload.doc.id,item.payload.doc.data())">View</button>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-item>
-    </ion-list>
-  </div>
-  <h5 text-center>Click&nbsp;&nbsp;<ion-icon name="add"></ion-icon>&nbsp;&nbsp;to create band member</h5>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items" no-padding lines>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2>
+            <ion-avatar item-start>
+              <img [src]="item.payload.doc.data().image">
+            </ion-avatar>
+          </ion-col>
+          <ion-col col-6>
+            <h3>{{item.payload.doc.data().name}}</h3>
+          </ion-col>
+          <ion-col col-2>
+            <button ion-button clear color="danger" (click)="editBandMemberDetails(item.payload.doc.id,item.payload.doc.data())">Edit</button>
+          </ion-col>
+          <ion-col col-2>
+            <button ion-button clear color="Primary" (click)="viewBandMemberDetails(item.payload.doc.id,item.payload.doc.data())">View</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+  <h5 text-center>Click&nbsp;&nbsp;<ion-icon name="add"></ion-icon>&nbsp;&nbsp;to create Band Event</h5>
 </ion-content>

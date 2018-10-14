@@ -35,7 +35,13 @@ export class CreateBandEventPage {
     this.image = "./assets/imgs/calendar.png";
     this.validations_form = this.formBuilder.group({
       title: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required)
+      description: new FormControl('', Validators.required),
+      venue: new FormControl('', Validators.required),
+      postcode: new FormControl('', Validators.required),
+      date: new FormControl('', Validators.required),
+      time: new FormControl('', Validators.required),
+      price: new FormControl('', Validators.required),
+      available: new FormControl('', Validators.required)
     });
   }
 
@@ -47,7 +53,13 @@ export class CreateBandEventPage {
     let data = {
       title: value.title,
       description: value.description,
-      image: this.image
+      image: this.image,
+      venue: value.venue,
+      postcode: value.postcode,
+      date: value.date,
+      time: value.time,
+      price: value.price,
+      available: value.available
     }
     this.firebaseService.createEvent(data)
     .then(

@@ -39,7 +39,12 @@ export class EditAlbumPage {
     this.image = this.item.image;
     this.validations_form = this.formBuilder.group({
       title: new FormControl(this.item.title, Validators.required),
-      description: new FormControl(this.item.description, Validators.required)
+      description: new FormControl(this.item.description, Validators.required),
+      released: new FormControl(this.item.released, Validators.required),
+      totalsongs: new FormControl(this.item.totalsongs, Validators.required),
+      duration: new FormControl(this.item.duration, Validators.required),
+      upcean: new FormControl(this.item.upcean, Validators.required),
+      genre: new FormControl(this.item.genre, Validators.required)
     });
     console.log(this.item.image);
   }
@@ -48,7 +53,12 @@ export class EditAlbumPage {
     let data = {
       title: value.title,
       description: value.description,
-      image: this.image
+      image: this.image,
+      released: value.released,
+      totalsongs: value.totalsongs,
+      duration: value.duration,
+      upcean: value.upcean,
+      genre: value.genre
     }
     this.firebaseService.updateAlbum(this.item.id,data)
     .then(

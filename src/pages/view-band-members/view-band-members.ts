@@ -38,7 +38,7 @@ export class ViewBandMembersPage {
     })
   }
 
-  viewBandMembersDetails(id, item) {
+  viewBandMemberDetails(id, item) {
     //refId = 'shit';
     // debugger
     let data = {
@@ -57,7 +57,7 @@ export class ViewBandMembersPage {
     console.log(data);
   }
 
-  editBandMembersDetails(id, item) {
+  editBandMemberDetails(id, item) {
     //refId = 'shit';
     // debugger
     let data = {

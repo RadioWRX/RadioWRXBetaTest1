@@ -45,6 +45,12 @@ export class ViewBandEventsPage {
       title: item.title,
       description: item.description,
       image: item.image,
+      venue: item.venue,
+      postcode: item.postcode,
+      date: item.date,
+      time: item.time,
+      price: item.price,
+      available: item.available
       //id: item.id
     }
     localStorage.setItem("id", id);
@@ -62,6 +68,12 @@ export class ViewBandEventsPage {
       title: item.title,
       description: item.description,
       image: item.image,
+      venue: item.venue,
+      postcode: item.postcode,
+      date: item.date,
+      time: item.time,
+      price: item.price,
+      available: item.available
       //id: item.id
     }
     localStorage.setItem("id", id);

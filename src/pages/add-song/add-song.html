@@ -1,0 +1,266 @@
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Add Song
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form class="new-user-form" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    <ion-item>
+      <ion-label floating color="primary">Title</ion-label>
+      <ion-input type="text" formControlName="title" class="form-control" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Song Number</ion-label>
+      <ion-select formControlName="songnumber">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="7">7</ion-option>
+        <ion-option value="8">8</ion-option>
+        <ion-option value="9">9</ion-option>
+        <ion-option value="10">10</ion-option>
+        <ion-option value="11">11</ion-option>
+        <ion-option value="12">12</ion-option>
+        <ion-option value="13">13</ion-option>
+        <ion-option value="14">14</ion-option>
+        <ion-option value="15">15</ion-option>
+        <ion-option value="16">16</ion-option>
+        <ion-option value="17">17</ion-option>
+        <ion-option value="18">18</ion-option>
+        <ion-option value="19">19</ion-option>
+        <ion-option value="20">20</ion-option>
+        <ion-option value="21">21</ion-option>
+        <ion-option value="22">22</ion-option>
+        <ion-option value="23">23</ion-option>
+        <ion-option value="24">24</ion-option>
+        <ion-option value="25">25</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Song Writers</ion-label>
+      <ion-input type="text" formControlName="songwriters" class="form-control" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Song Duration Minutes</ion-label>
+      <ion-select formControlName="songdurationminutes">
+        <ion-option value="0">0</ion-option>
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="7">7</ion-option>
+        <ion-option value="8">8</ion-option>
+        <ion-option value="9">9</ion-option>
+        <ion-option value="10">10</ion-option>
+        <ion-option value="11">11</ion-option>
+        <ion-option value="12">12</ion-option>
+        <ion-option value="13">13</ion-option>
+        <ion-option value="14">14</ion-option>
+        <ion-option value="15">15</ion-option>
+        <ion-option value="16">16</ion-option>
+        <ion-option value="17">17</ion-option>
+        <ion-option value="18">18</ion-option>
+        <ion-option value="19">19</ion-option>
+        <ion-option value="20">20</ion-option>
+        <ion-option value="21">21</ion-option>
+        <ion-option value="22">22</ion-option>
+        <ion-option value="23">23</ion-option>
+        <ion-option value="24">24</ion-option>
+        <ion-option value="25">25</ion-option>
+        <ion-option value="26">26</ion-option>
+        <ion-option value="27">27</ion-option>
+        <ion-option value="28">28</ion-option>
+        <ion-option value="29">29</ion-option>
+        <ion-option value="30">30</ion-option>
+        <ion-option value="31">31</ion-option>
+        <ion-option value="32">32</ion-option>
+        <ion-option value="33">33</ion-option>
+        <ion-option value="34">34</ion-option>
+        <ion-option value="35">35</ion-option>
+        <ion-option value="36">36</ion-option>
+        <ion-option value="37">37</ion-option>
+        <ion-option value="38">38</ion-option>
+        <ion-option value="39">39</ion-option>
+        <ion-option value="40">40</ion-option>
+        <ion-option value="41">41</ion-option>
+        <ion-option value="42">42</ion-option>
+        <ion-option value="43">43</ion-option>
+        <ion-option value="44">44</ion-option>
+        <ion-option value="45">45</ion-option>
+        <ion-option value="46">46</ion-option>
+        <ion-option value="47">47</ion-option>
+        <ion-option value="48">48</ion-option>
+        <ion-option value="49">49</ion-option>
+        <ion-option value="50">50</ion-option>
+        <ion-option value="51">51</ion-option>
+        <ion-option value="52">52</ion-option>
+        <ion-option value="53">53</ion-option>
+        <ion-option value="54">54</ion-option>
+        <ion-option value="55">55</ion-option>
+        <ion-option value="56">56</ion-option>
+        <ion-option value="57">57</ion-option>
+        <ion-option value="58">58</ion-option>
+        <ion-option value="59">59</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Song Duration Seconds</ion-label>
+      <ion-select formControlName="songdurationseconds">
+        <ion-option value="00">00</ion-option>
+        <ion-option value="01">01</ion-option>
+        <ion-option value="02">02</ion-option>
+        <ion-option value="03">03</ion-option>
+        <ion-option value="04">04</ion-option>
+        <ion-option value="05">05</ion-option>
+        <ion-option value="06">06</ion-option>
+        <ion-option value="07">07</ion-option>
+        <ion-option value="08">08</ion-option>
+        <ion-option value="09">09</ion-option>
+        <ion-option value="10">10</ion-option>
+        <ion-option value="11">11</ion-option>
+        <ion-option value="12">12</ion-option>
+        <ion-option value="13">13</ion-option>
+        <ion-option value="14">14</ion-option>
+        <ion-option value="15">15</ion-option>
+        <ion-option value="16">16</ion-option>
+        <ion-option value="17">17</ion-option>
+        <ion-option value="18">18</ion-option>
+        <ion-option value="19">19</ion-option>
+        <ion-option value="20">20</ion-option>
+        <ion-option value="21">21</ion-option>
+        <ion-option value="22">22</ion-option>
+        <ion-option value="23">23</ion-option>
+        <ion-option value="24">24</ion-option>
+        <ion-option value="25">25</ion-option>
+        <ion-option value="26">26</ion-option>
+        <ion-option value="27">27</ion-option>
+        <ion-option value="28">28</ion-option>
+        <ion-option value="29">29</ion-option>
+        <ion-option value="30">30</ion-option>
+        <ion-option value="31">31</ion-option>
+        <ion-option value="32">32</ion-option>
+        <ion-option value="33">33</ion-option>
+        <ion-option value="34">34</ion-option>
+        <ion-option value="35">35</ion-option>
+        <ion-option value="36">36</ion-option>
+        <ion-option value="37">37</ion-option>
+        <ion-option value="38">38</ion-option>
+        <ion-option value="39">39</ion-option>
+        <ion-option value="40">40</ion-option>
+        <ion-option value="41">41</ion-option>
+        <ion-option value="42">42</ion-option>
+        <ion-option value="43">43</ion-option>
+        <ion-option value="44">44</ion-option>
+        <ion-option value="45">45</ion-option>
+        <ion-option value="46">46</ion-option>
+        <ion-option value="47">47</ion-option>
+        <ion-option value="48">48</ion-option>
+        <ion-option value="49">49</ion-option>
+        <ion-option value="50">50</ion-option>
+        <ion-option value="51">51</ion-option>
+        <ion-option value="52">52</ion-option>
+        <ion-option value="53">53</ion-option>
+        <ion-option value="54">54</ion-option>
+        <ion-option value="55">55</ion-option>
+        <ion-option value="56">56</ion-option>
+        <ion-option value="57">57</ion-option>
+        <ion-option value="58">58</ion-option>
+        <ion-option value="59">59</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Publisher</ion-label>
+      <ion-input type="text" formControlName="publisher" class="form-control" required></ion-input>
+      <button ion-button clear color="danger" type="button" item-right>
+        <ion-icon name="help"> </ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Bundle Name</ion-label>
+      <ion-input type="text" formControlName="bundlename" class="form-control" required></ion-input>
+      <button ion-button clear color="danger" type="button" item-right>
+        <ion-icon name="help"> </ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">ISRC Code</ion-label>
+      <ion-input type="text" formControlName="isrccode" class="form-control" required></ion-input>
+      <button ion-button clear color="danger" type="button" item-right>
+        <ion-icon name="help"> </ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Label Name</ion-label>
+      <ion-input type="text" formControlName="labelname" class="form-control" required></ion-input>
+      <button ion-button clear color="danger" type="button" item-right>
+        <ion-icon name="help"> </ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Product Catalogue Number</ion-label>
+      <ion-input type="text" formControlName="productcataloguenumber" class="form-control" required></ion-input>
+      <button ion-button clear color="danger" type="button" item-right>
+        <ion-icon name="help"> </ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Disc Number</ion-label>
+      <ion-input type="text" formControlName="discnumber" class="form-control" required></ion-input>
+      <button ion-button clear color="danger" type="button" item-right>
+        <ion-icon name="help"> </ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">GRID</ion-label>
+      <ion-input type="text" formControlName="grid" class="form-control" required></ion-input>
+      <button ion-button clear color="danger" type="button" item-right>
+        <ion-icon name="help"> </ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">ISWC</ion-label>
+      <ion-input type="text" formControlName="iswc" class="form-control" required></ion-input>
+      <button ion-button clear color="danger" type="button" item-right>
+        <ion-icon name="help"> </ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Bundle Id</ion-label>
+      <ion-input type="text" formControlName="bundleid" class="form-control" required></ion-input>
+      <button ion-button clear color="danger" type="button" item-right>
+        <ion-icon name="help"> </ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Physical Product Name</ion-label>
+      <ion-input type="text" formControlName="physicalproductname" class="form-control" required></ion-input>
+      <button ion-button clear color="danger" type="button" item-right>
+        <ion-icon name="help"> </ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Album Id</ion-label>
+      <ion-input type="text" formControlName="albumid" class="form-control" required></ion-input>
+      <button ion-button clear color="danger" type="button" item-right>
+        <ion-icon name="help"> </ion-icon>
+      </button>
+    </ion-item>
+    <button class="form-action-button" ion-button block type="submit" [disabled]="!validations_form.valid">Create</button>
+  </form>
+</ion-content>

@@ -8,43 +8,44 @@
 
 
 <ion-content>
-  <ion-card>
-    <ion-row no-padding class="user-image-row">
-      <ion-col no-padding col-6 offset-3>
-        <img [src]="image" alt="this is the image"/>
-      </ion-col>
-    </ion-row>
-    <ion-row no-padding class="user-image-row">
-      <ion-col no-padding width-60>
-        <button class="image-action-button" ion-button outline block small (click)="openImagePicker()">Change Picture</button>
-      </ion-col>
-    </ion-row>
-    <form class="new-user-form" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
-      <ion-item>
-        <ion-label floating color="primary">Title</ion-label>
-        <ion-input type="text" formControlName="name" class="form-control" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating color="primary">Description</ion-label>
-        <ion-textarea type="text" formControlName="biography" class="form-control" required></ion-textarea>
-      </ion-item>
-      <ion-item>
-        <ion-label>Instrument</ion-label>
-        <ion-select multiple="true" formControlName="instrument">
-          <ion-option value="Vocals">Vocals</ion-option>
-          <ion-option value="Guitar">Guitar</ion-option>
-          <ion-option value="Bass">Bass</ion-option>
-          <ion-option value="Drums">Drums</ion-option>
-          <ion-option value="Piano">Piano</ion-option>
-        </ion-select>
-      </ion-item>
-      <ion-item>
-        <ion-label>DOB</ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MM/DD/YYYY" formControlName="dob"></ion-datetime>
-      </ion-item>
-      <button class="form-action-button" ion-button block type="submit" [disabled]="!validations_form.valid">Save</button>
-    </form>
-    <button class="form-action-button" ion-button block color="danger" (click)="delete()">Delete</button>
-
-  </ion-card>
+  <ion-row no-padding class="user-image-row">
+    <ion-col no-padding col-6 offset-3>
+      <img [src]="image" alt="this is the image"/>
+    </ion-col>
+  </ion-row>
+  <ion-row no-padding class="user-image-row">
+    <ion-col col-3>
+    </ion-col>
+    <ion-col col-6>
+      <button class="image-action-button" ion-button outline block small (click)="openImagePicker()">Change Picture</button>
+    </ion-col>
+    <ion-col col-3>
+    </ion-col>
+  </ion-row>
+  <form class="new-user-form" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    <ion-item>
+      <ion-label floating color="primary">Title</ion-label>
+      <ion-input type="text" formControlName="name" class="form-control" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Description</ion-label>
+      <ion-textarea type="text" formControlName="biography" class="form-control" required></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Instrument</ion-label>
+      <ion-select multiple="true" formControlName="instrument">
+        <ion-option value="Vocals">Vocals</ion-option>
+        <ion-option value="Guitar">Guitar</ion-option>
+        <ion-option value="Bass">Bass</ion-option>
+        <ion-option value="Drums">Drums</ion-option>
+        <ion-option value="Piano">Piano</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>DOB</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MM/DD/YYYY" formControlName="dob"></ion-datetime>
+    </ion-item>
+    <button class="form-action-button" ion-button block type="submit" [disabled]="!validations_form.valid">Save</button>
+  </form>
+  <button class="form-action-button" ion-button block color="danger" (click)="delete()">Delete</button>
 </ion-content>

@@ -149,7 +149,13 @@ export class FirebaseService {
       this.afs.collection('band').doc(currentUser.uid).collection('events').add({
         title: value.title,
         description: value.description,
-        image: value.image
+        image: value.image,
+        venue: value.venue,
+        postcode: value.postcode,
+        date: value.date,
+        time: value.time,
+        price: value.price,
+        available: value.available
       })
       .then(
         res => resolve(res),
@@ -202,7 +208,12 @@ export class FirebaseService {
       this.afs.collection('band').doc(currentUser.uid).collection('albums').add({
         title: value.title,
         description: value.description,
-        image: value.image
+        image: value.image,
+        released: value.released,
+        totalsongs: value.totalsongs,
+        duration: value.duration,
+        upcean: value.upcean,
+        genre: value.genre
       })
       .then(
         res => resolve(res),
@@ -256,9 +267,21 @@ export class FirebaseService {
       this.docId = localStorage.getItem('id');
       this.afs.collection('band').doc(currentUser.uid).collection('albums').doc(this.docId).collection('songs').add({
         title: value.title,
-        description: value.description,
-        //image: value.image,
-        //id: value.id
+        songnumber: value.songnumber,
+        songwriters: value.songwriters,
+        songdurationminutes: value.songdurationminutes,
+        songdurationseconds: value.songdurationseconds,
+        publisher: value.publisher,
+        bundlename: value.bundlename,
+        isrccode: value.isrccode,
+        labelname: value.labelname,
+        productcataloguenumber: value.productcataloguenumber,
+        discnumber: value.discnumber,
+        grid: value.grid,
+        iswc: value.iswc,
+        bundleid: value.bundleid,
+        physicalproductname: value.physicalproductname,
+        albumid: value.albumid
       })
       .then(
         res => resolve(res),
