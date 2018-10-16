@@ -78,8 +78,7 @@ export class BandViewAlbumPage {
     // debugger
     let data = {
       title: item.title,
-      description: item.description
-      /*songnumber: item.songnumber,
+      songnumber: item.songnumber,
       songwriters: item.songwriters,
       songdurationminutes: item.songdurationminutes,
       songdurationseconds: item.songdurationseconds,
@@ -93,7 +92,8 @@ export class BandViewAlbumPage {
       iswc: item.iswc,
       bundleid: item.bundleid,
       physicalproductname: item.physicalproductname,
-      albumid: item.albumid*/
+      albumid: item.albumid,
+      id: id
     }
     this.navCtrl.push(EditSongPage, {
       data: data
