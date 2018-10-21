@@ -2,6 +2,17 @@ import { Component } from '@angular/core';
 import { IonicPage, ViewController, normalizeURL, ToastController, NavParams, AlertController, LoadingController, ModalController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FirebaseService } from '../services/firebase.service';
+import { PublisherModalPage } from '../publisher-modal/publisher-modal';
+import { BundleNameModalPage } from '../bundle-name-modal/bundle-name-modal';
+import { IsrcCodeModalPage } from '../isrc-code-modal/isrc-code-modal';
+import { LabelNameModalPage } from '../label-name-modal/label-name-modal';
+import { ProductCatalogueNumberModalPage } from '../product-catalogue-number-modal/product-catalogue-number-modal';
+import { DiscNumberModalPage } from '../disc-number-modal/disc-number-modal';
+import { GridModalPage } from '../grid-modal/grid-modal';
+import { IswcModalPage } from '../iswc-modal/iswc-modal';
+import { BundleIdModalPage } from '../bundle-id-modal/bundle-id-modal';
+import { PhysicalProductNameModalPage } from '../physical-product-name-modal/physical-product-name-modal';
+import { AlbumIdModalPage } from '../album-id-modal/album-id-modal';
 
 @IonicPage()
 @Component({
@@ -22,7 +33,8 @@ export class EditSongPage {
     private alertCtrl: AlertController,
     private formBuilder: FormBuilder,
     private firebaseService: FirebaseService,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private modalCtrl: ModalController
   ) {
   }
 
@@ -105,61 +117,74 @@ export class EditSongPage {
     confirm.present();
   }
 
+  dismiss() {
+   this.viewCtrl.dismiss();
+  }
+
   // This will provide an explanation as to what a Publisher is in the usic business.
   openPublisherModal() {
-    alert("Let's open the Publisher Modal.");
+    const publisherModal = this.modalCtrl.create(PublisherModalPage);
+    publisherModal.present();
   }
 
   // This will explain what a Bundle Name is.
   openBundleNameModal() {
-    alert("Let's open the Bundle Name Modal");
+    const bundleNameModal = this.modalCtrl.create(BundleNameModalPage);
+    bundleNameModal.present();
   }
 
   // This will explain what an ISRC code is and how to obtain one.
   openISRCCodeModal() {
-    alert("Let's open the ISRC Code Modal.");
+    const isrcCodeModal = this.modalCtrl.create(IsrcCodeModalPage);
+    isrcCodeModal.present();
   }
 
   // This will explaing what a Label Name is.
   openLabelNameModal() {
-    alert("Let's open the Label Name Modal");
+    const labelNameModal = this.modalCtrl.create(LabelNameModalPage);
+    labelNameModal.present();
   }
 
   // This will explain what a Product Catalogue Number is
   openProductCatalogueNumberModal() {
-    alert("Let's open the Product Catalogue Number Modal.");
+    const productCatalogueNumberModal = this.modalCtrl.create(ProductCatalogueNumberModalPage);
+    productCatalogueNumberModal.present();
   }
 
   // This will explain what a Disc Number is
   openDiscNumberModal() {
-    alert(" Let's open the Disc Number Modal.");
+    const discNumberNumberModal = this.modalCtrl.create(DiscNumberModalPage);
+    discNumberNumberModal.present();
   }
 
   // This will explain what a GRID is
   openGRIDModal() {
-    alert("Let's open the GRID Modal");
+    const gridModal = this.modalCtrl.create(GridModalPage);
+    gridModal.present();
   }
 
   // This will explain what an ISWC is
   openISWCModal() {
-    alert("Let's open the ISWC Modal");
+    const iswcModal = this.modalCtrl.create(IswcModalPage);
+    iswcModal.present();
   }
 
   // This will explain what a Bundle Id
   openBundleIdModal() {
-    alert("Let's open the Bundle Id Modal");
+    const bundleIdModal = this.modalCtrl.create(BundleIdModalPage);
+    bundleIdModal.present();
   }
 
   // This will explain what a Physical Product Name is.
   openPhysicalProductNameModal() {
-    alert("Let;s open the Physical Product Name Modal");
+    const physicalProductNameModal = this.modalCtrl.create(PhysicalProductNameModalPage);
+    physicalProductNameModal.present();
   }
 
   openAlbumIdModal() {
-    alert("Let's open the Album Id Modal.");
+    const albumIdModal = this.modalCtrl.create(AlbumIdModalPage);
+    albumIdModal.present();
   }
-
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditSongPage');

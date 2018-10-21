@@ -1,25 +1,18 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
-/**
- * Generated class for the PublisherModalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
-  selector: 'page-publisher-modal',
-  templateUrl: 'publisher-modal.html',
+  selector: 'page-album-id-modal',
+  templateUrl: 'album-id-modal.html',
 })
-export class PublisherModalPage {
+export class AlbumIdModalPage {
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private viewCtrl: ViewController
-  ) {
+    ) {
   }
 
   dismiss() {
@@ -27,7 +20,7 @@ export class PublisherModalPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PublisherModalPage');
+    console.log('ionViewDidLoad AlbumIdModalPage');
   }
 
 }

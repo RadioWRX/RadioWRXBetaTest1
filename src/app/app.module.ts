@@ -40,6 +40,17 @@ import { ViewBandMembersPage } from '../pages/view-band-members/view-band-member
 import { ViewBandEventsPage } from '../pages/view-band-events/view-band-events';
 import { AddAlbumPage } from '../pages/add-album/add-album';
 import { AddSongPage } from '../pages/add-song/add-song';
+import { PublisherModalPage } from '../pages/publisher-modal/publisher-modal';
+import { BundleNameModalPage } from '../pages/bundle-name-modal/bundle-name-modal';
+import { IsrcCodeModalPage } from '../pages/isrc-code-modal/isrc-code-modal';
+import { LabelNameModalPage } from '../pages/label-name-modal/label-name-modal';
+import { ProductCatalogueNumberModalPage } from '../pages/product-catalogue-number-modal/product-catalogue-number-modal';
+import { DiscNumberModalPage } from '../pages/disc-number-modal/disc-number-modal';
+import { GridModalPage } from '../pages/grid-modal/grid-modal';
+import { IswcModalPage } from '../pages/iswc-modal/iswc-modal';
+import { BundleIdModalPage } from '../pages/bundle-id-modal/bundle-id-modal';
+import { PhysicalProductNameModalPage } from '../pages/physical-product-name-modal/physical-product-name-modal';
+import { AlbumIdModalPage } from '../pages/album-id-modal/album-id-modal';
 
 import { FirebaseService } from '../pages/services/firebase.service';
 import { AuthService } from '../pages/services/auth.service';
@@ -85,7 +96,18 @@ import { environment } from '../environment/environment';
     ViewBandMembersPage,
     ViewBandEventsPage,
     AddAlbumPage,
-    AddSongPage
+    AddSongPage,
+    PublisherModalPage,
+    BundleNameModalPage,
+    IsrcCodeModalPage,
+    LabelNameModalPage,
+    ProductCatalogueNumberModalPage,
+    DiscNumberModalPage,
+    GridModalPage,
+    IswcModalPage,
+    BundleIdModalPage,
+    PhysicalProductNameModalPage,
+    AlbumIdModalPage
   ],
   imports: [
     BrowserModule,
@@ -130,7 +152,18 @@ import { environment } from '../environment/environment';
     ViewBandMembersPage,
     ViewBandEventsPage,
     AddAlbumPage,
-    AddSongPage
+    AddSongPage,
+    PublisherModalPage,
+    BundleNameModalPage,
+    IsrcCodeModalPage,
+    LabelNameModalPage,
+    ProductCatalogueNumberModalPage,
+    DiscNumberModalPage,
+    GridModalPage,
+    IswcModalPage,
+    BundleIdModalPage,
+    PhysicalProductNameModalPage,
+    AlbumIdModalPage
   ],
   providers: [
     StatusBar,
