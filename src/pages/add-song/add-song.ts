@@ -60,10 +60,6 @@ export class AddSongPage {
     });
   }
 
-  dismiss() {
-   this.viewCtrl.dismiss();
-  }
-
   onSubmit(value){
     let data = {
       title: value.title,

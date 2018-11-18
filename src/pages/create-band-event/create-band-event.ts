@@ -74,4 +74,12 @@ export class CreateBandEventPage {
     console.log('ionViewDidLoad CreateBandEventPage');
   }
 
+  openImagePicker(options) {
+    this.imagePicker.getPictures(options).then((results) => {
+      for (var i = 0; i < results.length; i++) {
+          console.log('Image URI: ' + results[i]);
+      }
+    }, (err) => { });
+  }
+
 }

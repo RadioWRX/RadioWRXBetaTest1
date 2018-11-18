@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 553:
+/***/ 582:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewAlbumModalPageModule", function() { return NewAlbumModalPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewSongModalPageModule", function() { return NewSongModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__new_album_modal__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__new_song_modal__ = __webpack_require__(339);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var NewAlbumModalPageModule = /** @class */ (function () {
-    function NewAlbumModalPageModule() {
+var NewSongModalPageModule = /** @class */ (function () {
+    function NewSongModalPageModule() {
     }
-    NewAlbumModalPageModule = __decorate([
+    NewSongModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__new_album_modal__["a" /* NewAlbumModalPage */],
+                __WEBPACK_IMPORTED_MODULE_2__new_song_modal__["a" /* NewSongModalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__new_album_modal__["a" /* NewAlbumModalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__new_song_modal__["a" /* NewSongModalPage */]),
             ],
         })
-    ], NewAlbumModalPageModule);
-    return NewAlbumModalPageModule;
+    ], NewSongModalPageModule);
+    return NewSongModalPageModule;
 }());
 
-//# sourceMappingURL=new-album-modal.module.js.map
+//# sourceMappingURL=new-song-modal.module.js.map
 
 /***/ })
 

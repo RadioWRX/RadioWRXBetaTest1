@@ -40,6 +40,14 @@ import { ViewBandMembersPage } from '../pages/view-band-members/view-band-member
 import { ViewBandEventsPage } from '../pages/view-band-events/view-band-events';
 import { AddAlbumPage } from '../pages/add-album/add-album';
 import { AddSongPage } from '../pages/add-song/add-song';
+import { ViewBandsCdFundsPage } from '../pages/view-bands-cd-funds/view-bands-cd-funds';
+import { ViewBandsVideosPage } from '../pages/view-bands-videos/view-bands-videos';
+import { AddVideoPage } from '../pages/add-video/add-video';
+import { EditVideoPage } from '../pages/edit-video/edit-video';
+import { AddCdFundsPage } from '../pages/add-cd-funds/add-cd-funds';
+import { EditCdFundsPage } from '../pages/edit-cd-funds/edit-cd-funds';
+
+// Modals
 import { PublisherModalPage } from '../pages/publisher-modal/publisher-modal';
 import { BundleNameModalPage } from '../pages/bundle-name-modal/bundle-name-modal';
 import { IsrcCodeModalPage } from '../pages/isrc-code-modal/isrc-code-modal';
@@ -97,6 +105,12 @@ import { environment } from '../environment/environment';
     ViewBandEventsPage,
     AddAlbumPage,
     AddSongPage,
+    ViewBandsCdFundsPage,
+    ViewBandsVideosPage,
+    AddVideoPage,
+    EditVideoPage,
+    AddCdFundsPage,
+    EditCdFundsPage,
     PublisherModalPage,
     BundleNameModalPage,
     IsrcCodeModalPage,
@@ -153,6 +167,12 @@ import { environment } from '../environment/environment';
     ViewBandEventsPage,
     AddAlbumPage,
     AddSongPage,
+    ViewBandsCdFundsPage,
+    ViewBandsVideosPage,
+    AddVideoPage,
+    EditVideoPage,
+    AddCdFundsPage,
+    EditCdFundsPage,
     PublisherModalPage,
     BundleNameModalPage,
     IsrcCodeModalPage,

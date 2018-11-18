@@ -1,14 +1,14 @@
 webpackJsonp([17],{
 
-/***/ 543:
+/***/ 573:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BandViewAlbumPageModule", function() { return BandViewAlbumPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditBandEventPageModule", function() { return EditBandEventPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__band_view_album__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__edit_band_event__ = __webpack_require__(180);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var BandViewAlbumPageModule = /** @class */ (function () {
-    function BandViewAlbumPageModule() {
+var EditBandEventPageModule = /** @class */ (function () {
+    function EditBandEventPageModule() {
     }
-    BandViewAlbumPageModule = __decorate([
+    EditBandEventPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__band_view_album__["a" /* BandViewAlbumPage */],
+                __WEBPACK_IMPORTED_MODULE_2__edit_band_event__["a" /* EditBandEventPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__band_view_album__["a" /* BandViewAlbumPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__edit_band_event__["a" /* EditBandEventPage */]),
             ],
         })
-    ], BandViewAlbumPageModule);
-    return BandViewAlbumPageModule;
+    ], EditBandEventPageModule);
+    return EditBandEventPageModule;
 }());
 
-//# sourceMappingURL=band-view-album.module.js.map
+//# sourceMappingURL=edit-band-event.module.js.map
 
 /***/ })
 

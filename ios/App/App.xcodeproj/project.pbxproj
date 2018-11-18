@@ -106,7 +106,7 @@
 				504EC3011FED79650016851F /* Frameworks */,
 				504EC3021FED79650016851F /* Resources */,
 				9592DBEFFC6D2A0C8D5DEB22 /* [CP] Embed Pods Frameworks */,
-				1727EC3CB217F0E41C7291DD /* [CP] Copy Pods Resources */,
+				FD71F2B5DB4525CF1AE42CE5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,7 +124,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 0920;
 				TargetAttributes = {
 					504EC3031FED79650016851F = {
 						CreatedOnToolsVersion = 9.2;
@@ -167,86 +167,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1727EC3CB217F0E41C7291DD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-App/Pods-App-resources.sh",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/GMEmptyFolder@1x.png",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/GMEmptyFolder@2x.png",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/GMSelected.png",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/GMSelected@2x.png",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/GMVideoIcon.png",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/GMVideoIcon@2x.png",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pgm_Localizable_ar.json",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pgm_Localizable_da.json",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pgm_Localizable_de.json",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pgm_Localizable_en.json",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pgm_Localizable_es.json",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pgm_Localizable_fr.json",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pgm_Localizable_hi.json",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pgm_Localizable_ja.json",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pgm_Localizable_nl.json",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pgm_Localizable_pl.json",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pgm_Localizable_pt-BR.json",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pgm_Localizable_ru.json",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pgm_Localizable_uk.json",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pgm_Localizable_vi.json",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/ca.lproj",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/de.lproj",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/en.lproj",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/es.lproj",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/fr.lproj",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/it.lproj",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pl.lproj",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/pt.lproj",
-				"${PODS_ROOT}/../../../node_modules/@capacitor/cli/assets/capacitor-cordova-ios-plugins/resources/zh-Hans.lproj",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GMEmptyFolder@1x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GMEmptyFolder@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GMSelected.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GMSelected@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GMVideoIcon.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GMVideoIcon@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pgm_Localizable_ar.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pgm_Localizable_da.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pgm_Localizable_de.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pgm_Localizable_en.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pgm_Localizable_es.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pgm_Localizable_fr.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pgm_Localizable_hi.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pgm_Localizable_ja.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pgm_Localizable_nl.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pgm_Localizable_pl.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pgm_Localizable_pt-BR.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pgm_Localizable_ru.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pgm_Localizable_uk.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pgm_Localizable_vi.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ca.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/de.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/es.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/it.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pl.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App/Pods-App-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6634F4EFEBD30273BCE97C65 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -274,19 +194,32 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-App/Pods-App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Capacitor/Capacitor.framework",
 				"${BUILT_PRODUCTS_DIR}/CapacitorCordova/Cordova.framework",
-				"${BUILT_PRODUCTS_DIR}/CordovaPlugins/CordovaPlugins.framework",
 				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Capacitor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cordova.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CordovaPlugins.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App/Pods-App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD71F2B5DB4525CF1AE42CE5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App/Pods-App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -336,7 +269,6 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -344,7 +276,6 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -395,7 +326,6 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -403,7 +333,6 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -443,7 +372,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.radiowrx.app;
+				PRODUCT_BUNDLE_IDENTIFIER = io.ionic.starter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -459,7 +388,7 @@
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.radiowrx.app;
+				PRODUCT_BUNDLE_IDENTIFIER = io.ionic.starter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

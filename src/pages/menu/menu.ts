@@ -9,6 +9,8 @@ import { ViewBandEventsPage } from '../view-band-events/view-band-events';
 import { CreateAlbumPage } from '../create-album/create-album';
 import { ViewBandsByFansPage } from '../view-bands-by-fans/view-bands-by-fans';
 import { ViewBandMembersPage } from '../view-band-members/view-band-members';
+import { ViewBandsCdFundsPage } from '../view-bands-cd-funds/view-bands-cd-funds';
+import { ViewBandsVideosPage } from '../view-bands-videos/view-bands-videos';
 
 
 @Component({
@@ -80,6 +82,14 @@ export class MenuPage {
 
   goToCreateBandsByFans() {
     this.navCtrl.push(ViewBandsByFansPage);
+  }
+
+  goToCreateVideos() {
+    this.navCtrl.push(ViewBandsVideosPage);
+  }
+
+  goToCreateCDFunds() {
+    this.navCtrl.push(ViewBandsCdFundsPage);
   }
 
 }
